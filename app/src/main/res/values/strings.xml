@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">虾米位置追踪</string>
+    <string name="tracking_active">位置追踪中</string>
+    <string name="tracking_stopped">已停止</string>
+    <string name="notification_channel_name">位置追踪</string>
+    <string name="notification_start">开始追踪</string>
+    <string name="notification_stop">停止</string>
+    <string name="permission_location">需要位置权限</string>
+    <string name="permission_background">需要后台位置权限</string>
+    <string name="permission_notification">需要通知权限</string>
+    <string name="privacy_title">隐私声明</string>
+    <string name="privacy_accept">同意</string>
+    <string name="privacy_decline">拒绝</string>
+</resources>
