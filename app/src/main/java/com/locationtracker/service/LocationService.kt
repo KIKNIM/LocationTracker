@@ -67,7 +67,7 @@ class LocationService : Service() {
             ctx.startService(Intent(ctx, LocationService::class.java).apply { action = "STOP" })
         }
 
-        lateinit var prefs: androidx.security.crypto.EncryptedSharedPreferences
+        lateinit var prefs: android.content.SharedPreferences
         var wasRunning = false
     }
 
@@ -225,5 +225,4 @@ class LocationService : Service() {
         val scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1)
         return if (scale > 0) level * 100 / scale else -1
     }
-
-
+}
