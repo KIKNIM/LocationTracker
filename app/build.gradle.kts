@@ -66,7 +66,6 @@ dependencies {
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)
     implementation(libs.play.services.location)
-    implementation(libs.play.services.activity.recognition)
     implementation(libs.paging.runtime)
     implementation(libs.paging.compose)
     implementation(libs.hilt.android)
