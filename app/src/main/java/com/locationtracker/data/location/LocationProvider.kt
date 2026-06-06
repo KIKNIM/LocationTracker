@@ -118,7 +118,7 @@ class LocationProvider @Inject constructor(
         interval
     ).setMinUpdateIntervalMillis(FASTEST)
         .setMaxUpdateDelayMillis(interval * 2)
-        .setSmallestDisplacement(DISPLACEMENT)
+        .setMinUpdateDistanceMeters(DISPLACEMENT)
         .build()
 }
 

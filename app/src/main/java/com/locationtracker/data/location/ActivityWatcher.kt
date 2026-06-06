@@ -24,7 +24,7 @@ class ActivityWatcher @Inject constructor(
     @ApplicationContext private val ctx: Context,
     private val client: ActivityRecognitionClient
 ) {
-    private const val STILL_CONFIRM_MS = 3 * 60_000L
+    private val STILL_CONFIRM_MS = 3 * 60_000L
     private var stillCandidateAt: Long? = null
     private var registered = false
 

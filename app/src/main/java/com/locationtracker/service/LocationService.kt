@@ -3,9 +3,11 @@ package com.locationtracker.service
 import android.app.*
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.content.pm.ServiceInfo
 import android.location.Location
 import android.os.*
+import com.locationtracker.App
 import com.locationtracker.MainActivity
 import com.locationtracker.R
 import com.locationtracker.data.location.ActivityWatcher
@@ -64,6 +66,9 @@ class LocationService : Service() {
         fun stop(ctx: Context) {
             ctx.startService(Intent(ctx, LocationService::class.java).apply { action = "STOP" })
         }
+
+        lateinit var prefs: androidx.security.crypto.EncryptedSharedPreferences
+        var wasRunning = false
     }
 
     @Inject lateinit var locationProvider: LocationProvider
@@ -87,7 +92,7 @@ class LocationService : Service() {
                 setShowBadge(false)
             }
         )
-        prefs = App.securePrefs
+        prefs = App.instance.securePrefs
     }
 
     override fun onBind(i: Intent?) = null
@@ -221,8 +226,4 @@ class LocationService : Service() {
         return if (scale > 0) level * 100 / scale else -1
     }
 
-    companion object {
-        lateinit var prefs: androidx.security.crypto.EncryptedSharedPreferences
-        var wasRunning = false
-    }
-}
+

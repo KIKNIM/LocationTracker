@@ -231,7 +231,7 @@ private fun PermRow(label: String, granted: Boolean, action: () -> Unit) {
             color = if (granted) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.error,
             modifier = Modifier.size(8.dp)) {}
         Spacer(Modifier.width(8.dp))
-        Text(label, style = MaterialTheme.typography.bodySmall, Modifier.weight(1f))
+        Text(label, style = MaterialTheme.typography.bodySmall, modifier = Modifier.weight(1f))
         TextButton(onClick = action) {
             Text(if (granted) "✓" else "去设置",
                 color = if (granted) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.error)
